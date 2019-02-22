@@ -13,7 +13,7 @@ const Router = new VueRouter({
 
 Router.beforeEach((to, from, next) => {
   if (store.state.language.language && store.state.language.language !== i18n.locale) {
-    i18n.locale = store.state.user.language;
+    i18n.locale = store.state.language.language;
     next();
   } else if (!store.state.language.language) {
     store.dispatch('language/setLanguage', navigator.languages)

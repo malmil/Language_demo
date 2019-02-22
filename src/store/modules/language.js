@@ -8,7 +8,7 @@ const supportedLanguages = Object.getOwnPropertyNames(Languages);
 export default {
   namespaced: true,
   state: {
-    language: '',
+    language: Vue.localStorage.get('language'),
   },
   mutations: {
     SET_LANGUAGE(state, lang) {
